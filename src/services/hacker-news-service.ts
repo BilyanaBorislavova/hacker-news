@@ -1,4 +1,4 @@
-class HackerNewsApi {
+class HackerNewsService {
     hackerNewsApi: string;
     hackerNewsTopStoriesQuery: string;
     hackerNewsTopStoriesApi: string;
@@ -16,4 +16,4 @@ class HackerNewsApi {
     getUserById = (id: string) => `${this.hackerNewsApi}/user/${id}.json`;
 }
 
-export default HackerNewsApi;
+export default HackerNewsService;
