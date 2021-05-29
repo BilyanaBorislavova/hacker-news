@@ -9,11 +9,11 @@ class HackerNewsApi {
         this.hackerNewsTopStoriesApi = `${this.hackerNewsApi}${this.hackerNewsTopStoriesQuery}`;
     }
 
-    getTopStories = () => this.hackerNewsTopStoriesApi;
+    getTopStoriesIds = () => this.hackerNewsTopStoriesApi;
 
     getStoryItemById = (id: number) => `${this.hackerNewsApi}/item/${id}.json`;
 
-    getUserById = (id: number) => `${this.hackerNewsApi}/user/${id}.json`;
+    getUserById = (id: string) => `${this.hackerNewsApi}/user/${id}.json`;
 }
 
 export default HackerNewsApi;
