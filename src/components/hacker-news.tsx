@@ -7,9 +7,9 @@ const MAX_TOP_STORIES_TO_RETRIEVE = 10;
 
 const HackerNews = () => {
     const hackerNewsService = new HackerNewsService();
-    const { topStories, loading } = useHackerNewsTopStories(hackerNewsService);
-    const tenRandomizedTopStories = !loading && shuffleArray(topStories).slice(0, MAX_TOP_STORIES_TO_RETRIEVE);
-
+    const { topStoriesIds, loading } = useHackerNewsTopStories(hackerNewsService);
+    const tenRandomizedTopStories = !loading && shuffleArray(topStoriesIds).slice(0, MAX_TOP_STORIES_TO_RETRIEVE);
+    console.log(tenRandomizedTopStories)
     return (
         <section>123</section>
     )

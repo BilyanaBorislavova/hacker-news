@@ -3,12 +3,12 @@ import { useFetch } from 'use-http';
 import HackerNewsService from '../services/hacker-news-service';
 
 const useHackerNewsTopStories = (hackerNewsApi: HackerNewsService) => {
-    const [ topStories, setTopStories ] = useState<Array<number>>([]);
+    const [ topStoriesIds, setTopStoriesIds ] = useState<Array<number>>([]);
     const endpoint = hackerNewsApi.getTopStoriesIds();
 
     const { data, loading } = useFetch(endpoint, []);
     
-    const getAndSetTopStories = () => setTopStories(data);
+    const getAndSetTopStories = () => setTopStoriesIds(data);
 
     useEffect(() => {
         if (!loading) {
@@ -17,7 +17,7 @@ const useHackerNewsTopStories = (hackerNewsApi: HackerNewsService) => {
     }, [ loading ]);
 
     return {
-        topStories,
+        topStoriesIds,
         loading,
     }
 };
