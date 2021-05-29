@@ -1,6 +1,5 @@
 import * as React from 'react';
-import useFetch, { FetchContext } from 'use-http';
-import useHackerNewsStory from '../hooks/use-hacker-news-story';
+import useFetch from 'use-http';
 import useHackerNewsTopStories from '../hooks/use-hacker-news-top-stories';
 import HackerNewsService from '../services/hacker-news-service';
 import { shuffleArray } from '../utils/array-utils';
@@ -9,19 +8,20 @@ const MAX_TOP_STORIES_TO_RETRIEVE = 10;
 
 const HackerNews = () => {
     const hackerNewsService = new HackerNewsService();
-    const [ stories, setStories ] = React.useState<any>([]);
+
+    const [ stories, setStories ] = React.useState([]);
     const { topStoriesIds } = useHackerNewsTopStories(hackerNewsService);
-    const tenRandomizedTopStories: any = shuffleArray(topStoriesIds).slice(0, MAX_TOP_STORIES_TO_RETRIEVE)
-        .map((id: number) =>
-        fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`).then(
-          response => response.json()
-        )
-      );
-    const result = Promise.all(tenRandomizedTopStories).then(data => data);
-    console.log(result)
-      React.useEffect(() => {
-        
-      }, [])
+    const tenRandomizedTopStories: any = shuffleArray(topStoriesIds).slice(0, MAX_TOP_STORIES_TO_RETRIEVE);
+    const mapStoriesAndRetrieveStoriesData = tenRandomizedTopStories
+        .map((id: number) => {
+            const endpoint = hackerNewsService.getStoryItemById(id);
+            const stories = fetch(endpoint).then(response => response.json());
+            return stories;
+    });
+
+    const allStories = Promise.all(mapStoriesAndRetrieveStoriesData)
+
+    console.log(allStories)
     return (
         <section>123</section>
     )
