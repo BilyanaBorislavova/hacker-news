@@ -10,34 +10,17 @@ const MAX_TOP_STORIES_TO_RETRIEVE = 10;
 const HackerNews = () => {
     const hackerNewsService = new HackerNewsService();
     const [ stories, setStories ] = React.useState<any>([]);
-    // const { topStoriesIds, loading } = useHackerNewsTopStories(hackerNewsService);
-    // const tenRandomizedTopStories: number[] = shuffleArray(topStoriesIds).slice(0, MAX_TOP_STORIES_TO_RETRIEVE);
-
+    const { topStoriesIds } = useHackerNewsTopStories(hackerNewsService);
+    const tenRandomizedTopStories: any = shuffleArray(topStoriesIds).slice(0, MAX_TOP_STORIES_TO_RETRIEVE)
+        .map((id: number) =>
+        fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`).then(
+          response => response.json()
+        )
+      );
+    const result = Promise.all(tenRandomizedTopStories).then(data => data);
+    console.log(result)
       React.useEffect(() => {
-        async function getTopStories() {
-            const url = "https://hacker-news.firebaseio.com/v0/topstories.json";
-            try {
-              const response = await fetch(url);
-              if (response.ok === false) {
-                throw new Error("Response Error:" + response.text);
-              }
-              const json = await response.json();
-
-              const promises = shuffleArray(json)
-                .slice(0, 10)
-                .map((id: number) =>
-                  fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`).then(
-                    response => response.json()
-                  )
-                );
-              const result = await Promise.all(promises);
-              return result;
-            } catch (err) {
-              console.error(err);
-            }
-          }
-          setStories(getTopStories().then(a => console.log(a)));
-          console.log(stories)
+        
       }, [])
     return (
         <section>123</section>
