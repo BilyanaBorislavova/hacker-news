@@ -8,9 +8,12 @@
     background: $primary-color-300;
     height: 100%;
 
-    .animated-pulse-icon,
-    .animated-button {
+    .animated-pulse-icon {
         margin-bottom: 55px;
+    }
+
+    .animated-button {
+        margin-top: 55px;
     }
 
     .animated-progress-bar {
