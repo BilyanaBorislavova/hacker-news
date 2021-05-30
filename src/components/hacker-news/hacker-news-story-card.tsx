@@ -22,7 +22,7 @@ const HackerNewsStoryCard: React.FC<IHackerNewsStoryCard> = ({
   <section className="hacker-news-story-card">
     <img
       className="hacker-news-story-card-image"
-      src="https://images.unsplash.com/photo-1477666250292-1419fac4c25c?auto=format&amp;fit=crop&amp;w=667&amp;q=80&amp;ixid=dW5zcGxhc2guY29tOzs7Ozs%3D"
+      src="https://cdn.pixabay.com/photo/2016/11/30/20/58/programming-1873854_960_720.png"
     />
     <article className="hacker-news-story-card-content">
       <h1 className="hacker-news-story-card-content-title">{title}</h1>
