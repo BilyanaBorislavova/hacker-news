@@ -1,0 +1,15 @@
+@import '../../styles/tools/mixins.scss';
+
+.hacker-news-stories {
+    &-title {
+        @include font-family-lato;
+        text-align: center;
+        color: #ffff;
+    }
+
+    &-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 24px;
+    }
+}
