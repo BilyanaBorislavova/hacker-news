@@ -6,7 +6,9 @@ import LoadingContextProvider from './providers/loading-context-provider';
 
 const App = () => (
     <LoadingContextProvider>
-        <HackerNews />
+        <section className="page-content-wrapper">
+            <HackerNews />
+        </section>
     </LoadingContextProvider>
 )
 

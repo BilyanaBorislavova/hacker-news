@@ -4,6 +4,7 @@
 
 //Elements styles
 @import './elements/buttons.scss';
+@import './elements/links.scss';
 
 // Fonts
 @font-face {
@@ -17,4 +18,10 @@ html,
 body,
 #root {
     height: 100%;
+}
+
+.page-content-wrapper {
+    padding: 20px;
+    background: linear-gradient(#6b6b83, #2c3e50);
+    min-height: 100vh;
 }
