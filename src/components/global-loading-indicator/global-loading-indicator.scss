@@ -1,0 +1,19 @@
+@import '../../styles/tools/variables.scss';
+
+.global-loading-indicator {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    background: $primary-color-300;
+    height: 100%;
+
+    .animated-pulse-icon,
+    .animated-button {
+        margin-bottom: 55px;
+    }
+
+    .animated-progress-bar {
+        width: 50%;
+    }
+}
