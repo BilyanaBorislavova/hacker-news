@@ -19,7 +19,7 @@ const HackerNewsStories: React.FC<{ stories: Array<IHackerNewsStory> }> = ({ sto
             {
                 stories.map((story: IHackerNewsStory) => (
                     <li key={story.id} className="hacker-news-stories-list-item">
-                        {/* <HackerNewsStory {...stories} /> */}
+                        <HackerNewsStory {...story} />
                     </li>)
                 )
             }

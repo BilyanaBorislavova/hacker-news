@@ -28,10 +28,10 @@ const HackerNews = () => {
     React.useEffect(() => {
         getAllStories();
     }, [ topStoriesIds ])
-    
+
     return (
         <section className="hacker-news">
-            <HackerNewsStories stories={[]} />
+            <HackerNewsStories stories={stories} />
         </section>
     )
 };
