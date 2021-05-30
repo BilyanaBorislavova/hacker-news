@@ -1,3 +1,5 @@
+import './hacker-news-stories.scss';
+
 import * as React from 'react';
 import HackerNewsStoryCard from './hacker-news-story-card';
 
@@ -15,6 +17,9 @@ interface IHackerNewsStory {
 
 const HackerNewsStories: React.FC<{ stories: Array<IHackerNewsStory> }> = ({ stories }) => (
     <section className="hacker-news-stories">
+        <h1 className="hacker-news-stories-title">
+            Top 10 Hacker Stories
+        </h1>
         <ul className="hacker-news-stories-list">
             {
                 stories.map((story: IHackerNewsStory) => (
