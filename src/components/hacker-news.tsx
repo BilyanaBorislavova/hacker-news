@@ -3,13 +3,14 @@ import useFetch from 'use-http';
 import useHackerNewsTopStories from '../hooks/use-hacker-news-top-stories';
 import HackerNewsService from '../services/hacker-news-service';
 import { shuffleArray } from '../utils/array-utils';
+import HackerNewsStories from './hacker-news-stories';
 
 const MAX_TOP_STORIES_TO_RETRIEVE = 10;
 
 const HackerNews = () => {
     const hackerNewsService = new HackerNewsService();
 
-    const [ stories, setStories ] = React.useState([]);
+    const [ stories, setStories ] = React.useState<any>([]);
     const { topStoriesIds } = useHackerNewsTopStories(hackerNewsService);
     const tenRandomizedTopStories: any = shuffleArray(topStoriesIds).slice(0, MAX_TOP_STORIES_TO_RETRIEVE);
     const mapStoriesAndRetrieveStoriesData = tenRandomizedTopStories
@@ -19,11 +20,19 @@ const HackerNews = () => {
             return stories;
     });
 
-    const allStories = Promise.all(mapStoriesAndRetrieveStoriesData)
-
-    console.log(allStories)
+    const getAllStories = async () => {
+        const data = await Promise.all(mapStoriesAndRetrieveStoriesData);
+        setStories(data);
+    } 
+    
+    React.useEffect(() => {
+        getAllStories();
+    }, [ topStoriesIds ])
+    
     return (
-        <section>123</section>
+        <section className="hacker-news">
+            <HackerNewsStories stories={[]} />
+        </section>
     )
 };
 
