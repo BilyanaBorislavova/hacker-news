@@ -6,7 +6,7 @@ interface IHackerNewsStoryCard {
   title: string;
   time: number;
   score: number;
-  authorId: string;
+  authorId: number;
   authorKarmaScore: number;
   url: string;
 }
@@ -23,6 +23,7 @@ const HackerNewsStoryCard: React.FC<IHackerNewsStoryCard> = ({
     <img
       className="hacker-news-story-card-image"
       src="https://cdn.pixabay.com/photo/2016/11/30/20/58/programming-1873854_960_720.png"
+      alt="code"
     />
     <article className="hacker-news-story-card-content">
       <h1 className="hacker-news-story-card-content-title">{title}</h1>

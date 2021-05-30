@@ -90,5 +90,10 @@
         font-size: 15px;
         margin-top: 8px;
     }
+
+    &-author {
+      display: grid;
+      row-gap: 8px;
+    }
   }
 }

@@ -13,6 +13,7 @@ interface IHackerNewsStory {
     title: string,
     type: string,
     url: string,
+    karma: number,
 }
 
 const HackerNewsStories: React.FC<{ stories: Array<IHackerNewsStory> }> = ({ stories }) => (
@@ -28,8 +29,8 @@ const HackerNewsStories: React.FC<{ stories: Array<IHackerNewsStory> }> = ({ sto
                           title={story.title}
                           time={story.time}
                           score={story.score}
-                          authorId="12"
-                          authorKarmaScore={123}
+                          authorId={story.id}
+                          authorKarmaScore={story.karma}
                           url={story.url}
                         />
                     </li>)

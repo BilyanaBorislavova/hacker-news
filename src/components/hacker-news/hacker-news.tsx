@@ -52,9 +52,11 @@ const HackerNews = () => {
         return <GlobalLoadingIndicator />
     }
 
+    const mergedStoriesWithUsers = stories.map((item: any, i: number) => Object.assign({}, item, users[i]));
+
     return (
         <section className="hacker-news">
-            <HackerNewsStories stories={stories} />
+            <HackerNewsStories stories={mergedStoriesWithUsers} />
         </section>
     )
 };
