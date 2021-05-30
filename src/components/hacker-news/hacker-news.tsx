@@ -1,4 +1,5 @@
 import * as React from 'react';
+import LoadingContext from '../../context/loading-context';
 import useHackerNewsTopStories from '../../hooks/use-hacker-news-top-stories';
 import HackerNewsService from '../../services/hacker-news-service';
 import { shuffleArray } from '../../utils/array-utils';
@@ -9,6 +10,8 @@ const MAX_TOP_STORIES_TO_RETRIEVE = 10;
 
 const HackerNews = () => {
     const hackerNewsService = new HackerNewsService();
+
+    const { shouldShowMainPage } = React.useContext(LoadingContext);
 
     const [ stories, setStories ] = React.useState<any>([]);
     const { topStoriesIds } = useHackerNewsTopStories(hackerNewsService);
@@ -29,7 +32,7 @@ const HackerNews = () => {
         getAllStories();
     }, [ topStoriesIds ])
 
-    if (stories.length) {
+    if (!stories.length || !shouldShowMainPage) {
         return <GlobalLoadingIndicator />
     }
 

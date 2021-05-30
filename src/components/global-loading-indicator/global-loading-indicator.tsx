@@ -7,8 +7,9 @@ import AnimatedHackerIcon from "../animated/animated-hacker-icon";
 import LoadingContext from "../../context/loading-context";
 
 const GlobalLoadingIndicator = () => {
-  const { isLoadingContent } = React.useContext(LoadingContext);
-  
+  const { isLoadingContent, setShouldShowMainPage } = React.useContext(LoadingContext);
+  const showMainPage = () => setShouldShowMainPage(true);
+
   return (
     <section className="global-loading-indicator">
       <AnimatedHackerIcon />
@@ -17,7 +18,7 @@ const GlobalLoadingIndicator = () => {
         !isLoadingContent && (
           <AnimatedButton
             text="Click to continue"
-            onClick={() => console.log("on click")}
+            onClick={showMainPage}
           />
         )
       }
