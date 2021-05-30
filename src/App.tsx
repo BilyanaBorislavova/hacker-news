@@ -1,9 +1,13 @@
-import React from 'react';
+import './styles/styles.scss';
 
-function App() {
-  return (
-    <h1>123</h1>
-  );
-}
+import * as React from 'react';
+import HackerNews from './components/hacker-news/hacker-news';
+import LoadingContextProvider from './providers/loading-context-provider';
+
+const App = () => (
+    <LoadingContextProvider>
+        <HackerNews />
+    </LoadingContextProvider>
+)
 
 export default App;
