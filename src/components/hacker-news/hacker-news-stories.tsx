@@ -1,5 +1,5 @@
 import * as React from 'react';
-import HackerNewsStory from './hacker-news-story';
+import HackerNewsStoryCard from './hacker-news-story-card';
 
 interface IHackerNewsStory {
     by: string,
@@ -19,7 +19,14 @@ const HackerNewsStories: React.FC<{ stories: Array<IHackerNewsStory> }> = ({ sto
             {
                 stories.map((story: IHackerNewsStory) => (
                     <li key={story.id} className="hacker-news-stories-list-item">
-                        <HackerNewsStory {...story} />
+                        <HackerNewsStoryCard
+                          title={story.title}
+                          time={story.time}
+                          score={story.score}
+                          authorId="12"
+                          authorKarmaScore={123}
+                          url={story.url}
+                        />
                     </li>)
                 )
             }
