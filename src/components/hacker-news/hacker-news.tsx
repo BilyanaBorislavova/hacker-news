@@ -10,11 +10,13 @@ const MAX_TOP_STORIES_TO_RETRIEVE = 10;
 
 const HackerNews = () => {
     const hackerNewsService = new HackerNewsService();
+    const { topStoriesIds } = useHackerNewsTopStories(hackerNewsService);
 
     const { shouldShowMainPage } = React.useContext(LoadingContext);
 
     const [ stories, setStories ] = React.useState<any>([]);
-    const { topStoriesIds } = useHackerNewsTopStories(hackerNewsService);
+    const [ users, setUsers ] = React.useState<any>([]);
+
     const tenRandomizedTopStories: any = shuffleArray(topStoriesIds).slice(0, MAX_TOP_STORIES_TO_RETRIEVE);
     const mapStoriesAndRetrieveStoriesData = tenRandomizedTopStories
         .map((id: number) => {
@@ -26,15 +28,27 @@ const HackerNews = () => {
     const getAllStories = async () => {
         const data = await Promise.all(mapStoriesAndRetrieveStoriesData);
         setStories(data);
-    } 
-    
+    };
+
+    const mapStoriesAndRetrieveUserData = stories
+        .map(({ by: userId }: { by: string }) => {
+            const endpoint = hackerNewsService.getUserById(userId);
+            const users = fetch(endpoint).then(response => response.json());
+            return users;
+    });
+
+    const getAllUsers = async () => {
+        const data = await Promise.all(mapStoriesAndRetrieveUserData);
+        setUsers(data)
+    };
+
     React.useEffect(() => {
         getAllStories();
     }, [ topStoriesIds ])
 
-    if (!stories.length || !shouldShowMainPage) {
-        return <GlobalLoadingIndicator />
-    }
+    // if (!stories.length || !shouldShowMainPage) {
+    //     return <GlobalLoadingIndicator />
+    // }
 
     return (
         <section className="hacker-news">
