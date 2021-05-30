@@ -7,8 +7,14 @@ interface ILoadingContextProvider {
 
 const LoadingContextProvider: React.FC<ILoadingContextProvider> = ({ children }) => {
     const [ isLoadingContent, setIsLoadingContent ] = React.useState(true);
+    const [ shouldShowMainPage, setShouldShowMainPage ] = React.useState(false);
 
-    const loadingValues = { isLoadingContent, setIsLoadingContent };
+    const loadingValues = {
+        isLoadingContent,
+        setIsLoadingContent,
+        shouldShowMainPage,
+        setShouldShowMainPage,
+    };
 
     return (
         <LoadingContext.Provider value={loadingValues}>
