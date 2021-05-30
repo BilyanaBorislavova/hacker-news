@@ -1,0 +1,29 @@
+@import '../../styles/tools/mixins.scss';
+@import '../../styles/tools/animations.scss';
+
+.animated-svg-line {
+    position: relative;
+
+    &-text {
+        @include font-family-lato();
+        color: #fff;
+        letter-spacing: 8px;
+        position: absolute;
+        bottom: 40%;
+        left: 38px;
+    }
+
+    &:hover {
+        .shape {
+            animation: 0.5s draw linear forwards;
+        }
+    }
+
+    .shape {
+        fill: transparent;
+        stroke-dasharray: 140 540;
+        stroke-dashoffset: -474;
+        stroke-width: 8px;
+        stroke: #19f6e8;
+    }
+}
