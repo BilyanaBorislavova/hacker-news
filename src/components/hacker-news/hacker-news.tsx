@@ -46,9 +46,9 @@ const HackerNews = () => {
         getAllStories();
     }, [ topStoriesIds ])
 
-    // if (!stories.length || !shouldShowMainPage) {
-    //     return <GlobalLoadingIndicator />
-    // }
+    if (!stories.length || !shouldShowMainPage) {
+        return <GlobalLoadingIndicator />
+    }
 
     return (
         <section className="hacker-news">
