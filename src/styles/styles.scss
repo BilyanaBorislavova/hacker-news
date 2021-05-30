@@ -2,6 +2,19 @@
 @import './generic/reset.scss';
 @import './generic/normalize.scss';
 
-body {
-    min-height: 100vh;
+//Elements styles
+@import './elements/buttons.scss';
+
+// Fonts
+@font-face {
+    font-family: 'Lato';
+    src: url('../assets/fonts/Lato-Regular.woff') format('woff2'),
+        url('../assets/fonts/Lato-Regular.woff') format('woff');
+    font-display: swap;
+}
+
+html,
+body,
+#root {
+    height: 100%;
 }
