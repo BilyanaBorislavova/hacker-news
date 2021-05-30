@@ -39,12 +39,14 @@ const HackerNews = () => {
 
     const getAllUsers = async () => {
         const data = await Promise.all(mapStoriesAndRetrieveUserData);
-        setUsers(data)
+        setUsers(data);
     };
 
     React.useEffect(() => {
         getAllStories();
     }, [ topStoriesIds ])
+
+    React.useMemo(() => getAllUsers(), [ stories ]);
 
     if (!stories.length || !shouldShowMainPage) {
         return <GlobalLoadingIndicator />
