@@ -10,10 +10,9 @@ interface IHackerNewsStory {
     title: string,
     type: string,
     url: string,
-    user: string,
 }
 
-const HackerNewsStory:React.FC<IHackerNewsStory> = ({ descendants, id, score, time, title, type, url, user }) => (
+const HackerNewsStory:React.FC<IHackerNewsStory> = ({ descendants, id, score, time, title, type, url }) => (
     <article className="hacker-news-story">
 
     </article>

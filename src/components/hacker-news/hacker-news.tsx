@@ -1,8 +1,8 @@
 import * as React from 'react';
-import useFetch from 'use-http';
-import useHackerNewsTopStories from '../hooks/use-hacker-news-top-stories';
-import HackerNewsService from '../services/hacker-news-service';
-import { shuffleArray } from '../utils/array-utils';
+import useHackerNewsTopStories from '../../hooks/use-hacker-news-top-stories';
+import HackerNewsService from '../../services/hacker-news-service';
+import { shuffleArray } from '../../utils/array-utils';
+import GlobalLoadingIndicator from '../global-loading-indicator/global-loading-indicator';
 import HackerNewsStories from './hacker-news-stories';
 
 const MAX_TOP_STORIES_TO_RETRIEVE = 10;
@@ -28,6 +28,10 @@ const HackerNews = () => {
     React.useEffect(() => {
         getAllStories();
     }, [ topStoriesIds ])
+
+    if (stories.length) {
+        return <GlobalLoadingIndicator />
+    }
 
     return (
         <section className="hacker-news">
