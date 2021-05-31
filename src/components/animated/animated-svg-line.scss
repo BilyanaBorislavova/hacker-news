@@ -1,4 +1,5 @@
 @import '../../styles/tools/mixins.scss';
+@import '../../styles/tools/breakpoints.scss';
 @import '../../styles/tools/variables.scss';
 @import '../../styles/tools/animations.scss';
 
@@ -30,5 +31,9 @@
 
     svg {
         width: 300px;
+
+        @include for-tablet-portrait-up {
+            width: unset;
+        }
     }
 }
