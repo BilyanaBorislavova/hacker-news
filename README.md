@@ -1,46 +1,16 @@
-# Getting Started with Create React App
+# Hacker New
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Application flow
+ ### Loading Page with two states
+ 1. First state is a simple loading indicator with an image
+ ![image](https://user-images.githubusercontent.com/32268510/120148220-8c97c300-c1f0-11eb-8ff0-da829f8b0ca9.png)
+ 2. The second state has a "Click to continue" button. In order to proceed to the Hacker News application, it needs to be clicked
+ ![image](https://user-images.githubusercontent.com/32268510/120148598-26f80680-c1f1-11eb-9db4-9b3a9ed4c1cf.png)
+ 3. Once we proceed to the application, we will see the cards with information from the Hacker News Api.
+ The news are ordered by ascending, based on their score.
+ ![image](https://user-images.githubusercontent.com/32268510/120148750-61fa3a00-c1f1-11eb-9017-d003de64045a.png)
+ 4. Hover on each card in order to get more information about the author id and karma score and story url
+ ![image](https://user-images.githubusercontent.com/32268510/120148974-b43b5b00-c1f1-11eb-9fbc-2ed84bfbe77b.png)
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
