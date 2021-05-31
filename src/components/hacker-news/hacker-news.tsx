@@ -17,8 +17,10 @@ const HackerNews = () => {
     const [ stories, setStories ] = React.useState<any>([]);
     const [ users, setUsers ] = React.useState<any>([]);
 
-    const tenRandomizedTopStories: any = shuffleArray(topStoriesIds).slice(0, MAX_TOP_STORIES_TO_RETRIEVE);
-    const mapStoriesAndRetrieveStoriesData = tenRandomizedTopStories
+    const tenRandomizedSortedTopStories: any = shuffleArray(topStoriesIds)
+        .slice(0, MAX_TOP_STORIES_TO_RETRIEVE);
+
+    const mapStoriesAndRetrieveStoriesData = tenRandomizedSortedTopStories
         .map((id: number) => {
             const endpoint = hackerNewsService.getStoryItemById(id);
             const stories = fetch(endpoint).then(response => response.json());
@@ -52,11 +54,13 @@ const HackerNews = () => {
         return <GlobalLoadingIndicator />
     }
 
-    const mergedStoriesWithUsers = stories.map((item: any, i: number) => Object.assign({}, item, users[i]));
+    const sortedStoriedByScoreMergedWithUsers = stories
+        .sort((a: any, b: any) => a.score - b.score)
+        .map((item: any, i: number) => Object.assign({}, item, users[i]));
 
     return (
         <section className="hacker-news">
-            <HackerNewsStories stories={mergedStoriesWithUsers} />
+            <HackerNewsStories stories={sortedStoriedByScoreMergedWithUsers} />
         </section>
     )
 };
