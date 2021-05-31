@@ -2,6 +2,7 @@ import './hacker-news-stories.scss';
 
 import * as React from 'react';
 import HackerNewsStoryCard from './hacker-news-story-card';
+import { timestampToDate } from '../../utils/date-utils';
 
 interface IHackerNewsStory {
     by: string,
@@ -27,7 +28,7 @@ const HackerNewsStories: React.FC<{ stories: Array<IHackerNewsStory> }> = ({ sto
                     <li key={story.id} className="hacker-news-stories-list-item">
                         <HackerNewsStoryCard
                           title={story.title}
-                          time={story.time}
+                          time={timestampToDate(story.time)}
                           score={story.score}
                           authorId={story.id}
                           authorKarmaScore={story.karma}

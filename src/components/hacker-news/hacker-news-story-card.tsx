@@ -4,7 +4,7 @@ import * as React from "react";
 
 interface IHackerNewsStoryCard {
   title: string;
-  time: number;
+  time: string;
   score: number;
   authorId: number;
   authorKarmaScore: number;
@@ -28,7 +28,7 @@ const HackerNewsStoryCard: React.FC<IHackerNewsStoryCard> = ({
     <article className="hacker-news-story-card-content">
       <h1 className="hacker-news-story-card-content-title">{title}</h1>
       <p className="hacker-news-story-card-content-timestamp">
-        Timestamp: {time}
+        Time: {time}
       </p>
       <p className="hacker-news-story-card-content-score">Score: {score}</p>
     </article>
