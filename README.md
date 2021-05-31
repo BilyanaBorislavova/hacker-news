@@ -12,5 +12,8 @@
  4. Hover on each card in order to get more information about the author id and karma score and story url
  ![image](https://user-images.githubusercontent.com/32268510/120148974-b43b5b00-c1f1-11eb-9fbc-2ed84bfbe77b.png)
 
-
-
+## Running the application locally
+1. Clone the repository
+2. Navigate to the hacker-news folder
+3. Run npm install and wait for the node modules to install
+4. Run npm start, the application will be available on [http://localhost:3000/](http://localhost:3000/)
