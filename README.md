@@ -1,4 +1,4 @@
-# Hacker New
+# Hacker News
 
 ## Application flow
  ### Loading Page with two states
