@@ -8,9 +8,9 @@
  ![image](https://user-images.githubusercontent.com/32268510/120148598-26f80680-c1f1-11eb-9db4-9b3a9ed4c1cf.png)
  3. Once we proceed to the application, we will see the cards with information from the Hacker News Api.
  The news are ordered by ascending, based on their score.
- ![image](https://user-images.githubusercontent.com/32268510/120148750-61fa3a00-c1f1-11eb-9017-d003de64045a.png)
+ ![image](https://user-images.githubusercontent.com/32268510/120149917-0cbf2800-c1f3-11eb-97cc-8b6426eac6c2.png)
  4. Hover on each card in order to get more information about the author id and karma score and story url
- ![image](https://user-images.githubusercontent.com/32268510/120148974-b43b5b00-c1f1-11eb-9fbc-2ed84bfbe77b.png)
+![image](https://user-images.githubusercontent.com/32268510/120149941-1779bd00-c1f3-11eb-9e15-3302465d6eac.png)
 
 ## Running the application locally
 1. Clone the repository
