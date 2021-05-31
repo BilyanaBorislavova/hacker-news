@@ -1,4 +1,5 @@
 @import '../../styles/tools/variables.scss';
+@import '../../styles/tools/breakpoints.scss';
 @import '../../styles/tools/mixins.scss';
 
 .hacker-news-stories {
@@ -10,8 +11,12 @@
 
     &-list {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
         gap: 24px;
+
+        @include for-tablet-portrait-up {
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        }
 
         &-item {
             justify-self: center;
