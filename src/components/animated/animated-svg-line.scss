@@ -1,4 +1,5 @@
 @import '../../styles/tools/mixins.scss';
+@import '../../styles/tools/variables.scss';
 @import '../../styles/tools/animations.scss';
 
 .animated-svg-line {
@@ -6,7 +7,7 @@
 
     &-text {
         @include font-family-lato();
-        color: #fff;
+        color: $white-color;
         letter-spacing: 8px;
         position: absolute;
         bottom: 40%;
@@ -24,6 +25,6 @@
         stroke-dasharray: 140 540;
         stroke-dashoffset: -474;
         stroke-width: 8px;
-        stroke: #19f6e8;
+        stroke: $primary-color-300;
     }
 }

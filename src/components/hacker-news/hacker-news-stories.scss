@@ -1,10 +1,11 @@
+@import '../../styles/tools/variables.scss';
 @import '../../styles/tools/mixins.scss';
 
 .hacker-news-stories {
     &-title {
         @include font-family-lato;
         text-align: center;
-        color: #ffff;
+        color: $white-color;
     }
 
     &-list {

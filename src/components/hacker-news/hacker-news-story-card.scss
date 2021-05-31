@@ -1,3 +1,4 @@
+@import '../../styles/tools/variables.scss';
 @import '../../styles/tools/mixins.scss';
 
 .hacker-news-story-card {
@@ -5,8 +6,8 @@
   width: 280px;
   height: 360px;
   border-radius: 15px;
-  padding: 1.5rem;
-  background: white;
+  padding: 15px;
+  background: $white-color;
   position: relative;
   display: flex;
   align-items: flex-end;
@@ -23,8 +24,8 @@
   }
 
   &-content {
-    color: #040404;
-    background-color: white;
+    color: $dark-color-800;
+    background-color: $white-color;
     box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.5);
     width: 92.7%;
   }
@@ -76,7 +77,7 @@
     padding: 0 12px;
     left: 0;
     z-index: 3;
-    color: white;
+    color: $white-color;
     opacity: 0;
     transform: translateY(30px);
     transition: 0.5s;

@@ -1,4 +1,5 @@
 @import '../../styles/tools/mixins.scss';
+@import '../../styles/tools/variables.scss';
 @import '../../styles/tools/animations.scss';
 
 .animated-progress-bar {
@@ -11,7 +12,7 @@
         
         &-text {
             @include font-family-lato;
-            color: #ffff;
+            color: $white-color;
             font-size: 20px;
     
             &:after {
